@@ -278,7 +278,7 @@ const chartConfig = {
   grid: { top: 50 },
   legend: { top: 0 }
 }</div>
-                    <div class="code-tip">代码填空1：设置红色主题色 → #c93737</div>
+                    <div class="code-tip">代码填空1：设置红色主题色 → color="#c93737"</div>
                     <textarea id="code1" placeholder="请填写=右侧的代码内容"></textarea>
                 </div>
 
@@ -290,7 +290,7 @@ function renderChart(){
   const drawLine = ________;  // 待填充
   if(drawLine){ drawTrendLine(); }
 }</div>
-                    <div class="code-tip">代码填空2：开启折线绘制 → true</div>
+                    <div class="code-tip">代码填空2：开启折线绘制 → drawLine=true</div>
                     <textarea id="code2" placeholder="请填写=右侧的代码内容"></textarea>
                 </div>
 
@@ -299,11 +299,11 @@ function renderChart(){
                     <div class="code-context">// 数据展示配置
 const labelConfig = {
   // 是否显示数值标签
-  showDataLabel: ________,  // 待填充
+  showDataLabel = ________,  // 待填充
   fontSize: 12,
   color: #fff
 }</div>
-                    <div class="code-tip">代码填空3：显示数据标签 → true</div>
+                    <div class="code-tip">代码填空3：显示数据标签 → showDataLabel=true</div>
                     <textarea id="code3" placeholder="请填写=右侧的代码内容"></textarea>
                 </div>
 
@@ -312,11 +312,11 @@ const labelConfig = {
                     <div class="code-context">// 图表系列配置
 series: [{
   // 图表展示类型
-  type: ________,  // 待填充
+  type = ________,  // 待填充
   data: dataSource,
   name: '统计数据'
 }]</div>
-                    <div class="code-tip">代码填空4：设置柱状图类型 → bar</div>
+                    <div class="code-tip">代码填空4：设置柱状图类型 → type="bar"</div>
                     <textarea id="code4" placeholder="请填写=右侧的代码内容"></textarea>
                 </div>
 
