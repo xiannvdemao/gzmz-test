@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>红色数据可视化分析实践 | 主题党日活动</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
     <style>
         /* 全局样式重置 & 基础配置 */
         * {
@@ -274,12 +274,12 @@
                     <div class="code-context">// 可视化图表全局配置
 const chartConfig = {
   // 主题颜色配置
-  color = ________,  // 待填充
+  color: ________,  // 待填充
   grid: { top: 50 },
   legend: { top: 0 }
 }</div>
-                    <div class="code-tip">代码填空1：设置红色主题色 → color="#c93737"</div>
-                    <textarea id="code1" placeholder="请填写=右侧的代码内容"></textarea>
+                    <div class="code-tip">代码填空1：设置红色主题色 → color = '#c93737'</div>
+                    <textarea id="code1" placeholder="请填写缺失的代码内容"></textarea>
                 </div>
 
                 <!-- 2. 代码填空：开启折线绘制 -->
@@ -290,8 +290,8 @@ function renderChart(){
   const drawLine = ________;  // 待填充
   if(drawLine){ drawTrendLine(); }
 }</div>
-                    <div class="code-tip">代码填空2：开启折线绘制 → drawLine=true</div>
-                    <textarea id="code2" placeholder="请填写=右侧的代码内容"></textarea>
+                    <div class="code-tip">代码填空2：开启折线绘制 → drawLine = true</div>
+                    <textarea id="code2" placeholder="请填写缺失的代码内容"></textarea>
                 </div>
 
                 <!-- 3. 代码填空：显示数据标签 -->
@@ -299,12 +299,12 @@ function renderChart(){
                     <div class="code-context">// 数据展示配置
 const labelConfig = {
   // 是否显示数值标签
-  showDataLabel = ________,  // 待填充
+  showDataLabel: ________,  // 待填充
   fontSize: 12,
   color: #fff
 }</div>
-                    <div class="code-tip">代码填空3：显示数据标签 → showDataLabel=true</div>
-                    <textarea id="code3" placeholder="请填写=右侧的代码内容"></textarea>
+                    <div class="code-tip">代码填空3：显示数据标签 → showDataLabel = true</div>
+                    <textarea id="code3" placeholder="请填写缺失的代码内容"></textarea>
                 </div>
 
                 <!-- 4. 代码填空：柱状图类型 -->
@@ -312,12 +312,12 @@ const labelConfig = {
                     <div class="code-context">// 图表系列配置
 series: [{
   // 图表展示类型
-  type = ________,  // 待填充
+  type: ________,  // 待填充
   data: dataSource,
   name: '统计数据'
 }]</div>
-                    <div class="code-tip">代码填空4：设置柱状图类型 → type="bar"</div>
-                    <textarea id="code4" placeholder="请填写=右侧的代码内容"></textarea>
+                    <div class="code-tip">代码填空4：设置柱状图类型 → chartType = 'bar'</div>
+                    <textarea id="code4" placeholder="请填写缺失的代码内容"></textarea>
                 </div>
 
                 <!-- 提交按钮 -->
@@ -357,19 +357,13 @@ series: [{
         const chart2 = echarts.init(document.getElementById('chart2'));
         const chart3 = echarts.init(document.getElementById('chart3'));
 
-        // =右侧值的校验规则（仅匹配等号后内容）
+        // 代码校验规则
         const codeRules = [
-            /^['"]?#c93737['"]?$/,  // 匹配 #c93737 允许带引号
-            /^true$/,               // 匹配 true
-            /^true$/,               // 匹配 true
-            /^['"]?bar['"]?$/       // 匹配 bar 允许带引号
+            /^color\s*=\s*["']#c93737["']$/,
+            /^drawLine\s*=\s*true$/,
+            /^showDataLabel\s*=\s*true$/,
+            /^chartType\s*=\s*["']bar["']$/
         ];
-
-        // 工具函数：提取等号右侧的值，去除空格和引号
-        function getRightValue(input) {
-            const value = input.trim().split('=')[1] || input.trim();
-            return value.replace(/['"]/g, '').trim();
-        }
 
         // 返回填空页面
         function goBack() {
@@ -380,26 +374,19 @@ series: [{
             }, 600);
         }
 
-        // 校验全部代码（仅校验=右侧内容）
+        // 校验全部代码 + 跳转到图表页（修复图表渲染问题）
         function checkAllCode() {
-            // 获取所有输入框的值
-            const input1 = document.getElementById("code1").value.trim();
-            const input2 = document.getElementById("code2").value.trim();
-            const input3 = document.getElementById("code3").value.trim();
-            const input4 = document.getElementById("code4").value.trim();
-
-            // 提取等号右侧的有效值
-            const values = [
-                getRightValue(input1),
-                getRightValue(input2),
-                getRightValue(input3),
-                getRightValue(input4)
+            const codes = [
+                document.getElementById("code1").value.trim(),
+                document.getElementById("code2").value.trim(),
+                document.getElementById("code3").value.trim(),
+                document.getElementById("code4").value.trim()
             ];
 
-            // 校验规则
+            // 校验逻辑
             for (let i = 0; i < 4; i++) {
-                if (!codeRules[i].test(values[i])) {
-                    alert(`第${i+1}个代码填写错误！请填写=右侧的正确内容~`);
+                if (!codeRules[i].test(codes[i])) {
+                    alert(`第${i+1}个代码填写错误！请按照提示填写正确代码~`);
                     return;
                 }
             }
@@ -408,20 +395,21 @@ series: [{
             document.getElementById('codePage').classList.add('hide');
             document.getElementById('chartPage').classList.remove('hide');
             
-            // 淡入动画 + 渲染图表
+            // 先触发淡入动画，再渲染图表并强制重绘
             setTimeout(() => {
                 document.getElementById('chartPage').classList.add('show');
                 
+                // 渲染3个核心图表
                 renderYanAnGDP();
                 renderPartyMember();
                 renderPovertyAlleviation();
 
-                // 修复图表渲染，强制重绘
+                // 关键修复：等待动画结束后手动重绘图表，解决尺寸计算错误
                 setTimeout(() => {
                     chart1.resize();
                     chart2.resize();
                     chart3.resize();
-                }, 600);
+                }, 600); // 等待淡入动画（0.6s）完成后重绘
             }, 10);
 
             // 综合心得体会
@@ -481,7 +469,7 @@ series: [{
             });
         }
 
-        // 窗口缩放自适应
+        // 窗口大小变化时重绘图表
         window.addEventListener('resize', () => {
             chart1.resize();
             chart2.resize();
