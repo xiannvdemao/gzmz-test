@@ -16,18 +16,16 @@
         }
 
         body {
-            background-color: #f0f2f5;
-            background-image: radial-gradient(#e8e8e8 1px, transparent 1px);
-            background-size: 24px 24px;
-            padding: 40px 20px;
+            background-color: #f0f0f0;
+            padding: 10px;
         }
 
         /* 主容器 卡片样式 */
         .container {
-            max-width: 1280px;
+            max-width: 1000px;
             margin: 0 auto;
             background: #ffffff;
-            border-radius: 16px;
+            border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             overflow: hidden;
         }
@@ -35,237 +33,226 @@
         /* 顶部红色党建装饰栏 */
         .top-bar {
             height: 8px;
-            background: linear-gradient(90deg, #a82c2c, #c93737, #a82c2c);
+            background: linear-gradient(90deg, #c93737, #a82c2c);
         }
 
         /* 头部标题区域 */
         .header {
-            padding: 35px 30px 20px;
+            padding: 30px 20px 20px;
             text-align: center;
+            position: relative;
+        }
+
+        /* 返回箭头图标（图表页专用） */
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 35px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            border: none;
+            font-size: 20px;
+            color: #c93737;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-btn:hover {
+            background: #c93737;
+            color: #fff;
         }
 
         .title {
             color: #c93737;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .sub-title {
-            color: #666666;
-            font-size: 16px;
-            line-height: 1.6;
+            color: #666;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         /* 分割线 */
         .divider {
             height: 1px;
-            background: linear-gradient(to right, transparent, #c93737, transparent);
-            margin: 0 40px;
+            background: #eee;
+            margin: 0 30px;
         }
 
-        /* 通用区块间距 */
+        /* 通用间距 */
         .wrap {
-            padding: 25px 40px;
+            padding: 30px;
         }
 
-        /* 主题选择区域 */
-        .select-box {
-            text-align: center;
-            margin-bottom: 20px;
+        /* ========== 双页面切换控制 ========== */
+        .page {
+            display: block;
+        }
+        .hide {
+            display: none !important;
         }
 
-        select {
-            min-width: 320px;
-            height: 44px;
-            padding: 0 16px;
-            font-size: 16px;
-            color: #333;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-            background-color: #fff;
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23c93737' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-        }
-
-        select:hover, select:focus {
-            border-color: #c93737;
-            box-shadow: 0 0 0 3px rgba(201, 55, 55, 0.1);
-        }
-
-        /* 代码输入区域 - 排版优化：垂直居中对齐 */
+        /* ========== 代码填空模块 ========== */
         .code-box {
-            text-align: center;
-            margin: 15px 0;
+            width: 100%;
+            margin: 20px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
         }
 
+        /* 代码片段展示标签 */
+        .code-context {
+            width: 90%;
+            background: #f7f8fa;
+            border: 1px solid #e5e6eb;
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-family: "Consolas", "Monaco", monospace;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+            text-align: left;
+            white-space: pre-wrap;
+        }
+
+        /* 代码填空提示标签 */
         .code-tip {
-            display: inline-block;
-            background-color: #fef0f0;
+            width: 90%;
+            background: #fef0f0;
             color: #c93737;
             font-weight: 600;
-            font-size: 15px;
-            padding: 6px 18px;
+            font-size: 14px;
+            padding: 8px 16px;
             border-radius: 20px;
-            margin-bottom: 12px;
+            text-align: center;
         }
 
+        /* 代码输入框 */
         textarea {
-            width: 65%;
-            height: 90px;
-            padding: 12px 16px;
+            width: 90%;
+            height: 80px;
+            padding: 15px;
             font-size: 15px;
             font-family: "Consolas", "Monaco", monospace;
             border: 1px solid #ddd;
             border-radius: 8px;
             outline: none;
-            background-color: #fafafa;
+            background: #fafafa;
             resize: none;
         }
 
         textarea:focus {
             border-color: #c93737;
             box-shadow: 0 0 0 3px rgba(201, 55, 55, 0.1);
-            background-color: #fff;
+            background: #fff;
         }
 
         /* 提交按钮 */
         .btn-box {
             text-align: center;
-            margin: 10px 0 20px;
+            margin: 30px 0;
         }
 
         button {
-            height: 44px;
-            padding: 0 32px;
+            width: 90%;
+            height: 48px;
             font-size: 16px;
             font-weight: 500;
             color: #fff;
-            background: linear-gradient(135deg, #c93737, #b82f2f);
+            background: linear-gradient(90deg, #c93737, #a82c2c);
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(201, 55, 55, 0.25);
+            box-shadow: 0 2px 8px rgba(201, 55, 55, 0.2);
         }
 
         button:hover {
-            background: linear-gradient(135deg, #b82f2f, #a82c2c);
-            box-shadow: 0 4px 12px rgba(201, 55, 55, 0.35);
             transform: translateY(-2px);
-        }
-
-        button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(201, 55, 55, 0.2);
+            box-shadow: 0 4px 12px rgba(201, 55, 55, 0.3);
         }
 
         /* 图表容器 */
-        #chart {
+        .chart-item {
             width: 100%;
-            height: 520px;
-            margin: 20px 0;
-            border: 1px solid #eeeeee;
-            border-radius: 12px;
-            background-color: #fdfdfd;
+            height: 400px;
+            margin: 25px 0;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fdfdfd;
         }
 
-        /* 数据来源标签 */
+        /* 数据来源 */
         .data-source {
             text-align: right;
             color: #666;
             font-size: 13px;
-            padding: 0 20px 10px;
+            padding: 0 10px 10px;
         }
 
         .data-source span {
-            display: inline-block;
-            background-color: #fef0f0;
-            padding: 4px 12px;
-            border-radius: 12px;
+            background: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 6px;
         }
 
-        /* 心得体会区域 卡片样式 */
+        /* 心得体会 */
         .experience {
-            margin: 20px 0 40px;
-            padding: 24px 28px;
-            background: linear-gradient(to right, #fff5f5, #fef8f8);
+            margin: 30px 0;
+            padding: 20px;
+            background: #fff5f5;
             border-left: 6px solid #c93737;
-            border-radius: 0 10px 10px 0;
-            line-height: 1.9;
-            font-size: 16px;
+            border-radius: 8px;
+            line-height: 1.8;
+            font-size: 15px;
             color: #333;
-            box-shadow: 0 2px 10px rgba(201, 55, 55, 0.08);
         }
 
-        /* 结果区域 - 淡入动画配置 */
-        #resultArea {
+        /* 图表页淡入动画 */
+        #chartPage {
             opacity: 0;
             visibility: hidden;
-            transform: translateY(10px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(15px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        #chartPage.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
-        /* ========== 手机端专属适配（仅修改此处，功能完全不变） ========== */
+        /* ========== 移动端适配 ========== */
         @media (max-width: 768px) {
-            body {
-                padding: 15px 10px;
-            }
-            .header {
-                padding: 20px 15px 15px;
-            }
             .title {
                 font-size: 22px;
-                letter-spacing: 1px;
-            }
-            .sub-title {
-                font-size: 14px;
-                padding: 0 5px;
-            }
-            .divider {
-                margin: 0 20px;
             }
             .wrap {
                 padding: 20px 15px;
             }
-            select {
+            .code-context, .code-tip, textarea, button {
                 width: 100%;
-                min-width: unset;
-                height: 46px;
-                font-size: 15px;
             }
-            textarea {
-                width: 100%;
-                height: 100px;
-                font-size: 14px;
+            .chart-item {
+                height: 350px;
             }
-            button {
-                width: 100%;
-                padding: 0 20px;
-                font-size: 15px;
-            }
-            #chart {
-                height: 400px;
-            }
-            .experience {
-                padding: 18px 20px;
-                font-size: 15px;
-                margin: 15px 0 30px;
-            }
-            .data-source {
-                padding: 0 10px 5px;
+            .code-context {
                 font-size: 12px;
+                padding: 12px 15px;
             }
-            .code-tip {
-                font-size: 14px;
-                padding: 5px 15px;
+            .back-btn {
+                left: 15px;
+                top: 30px;
+                width: 32px;
+                height: 32px;
+                font-size: 18px;
             }
         }
     </style>
@@ -273,268 +260,221 @@
 <body>
     <div class="container">
         <div class="top-bar"></div>
-        <div class="header">
-            <h1 class="title">红色数据可视化分析实践</h1>
-            <p class="sub-title">践行求真务实学风 · 规范编写代码 · 传承红色基因 · 勇担青年使命</p>
-        </div>
-        <div class="divider"></div>
-        <div class="wrap">
-            <div class="select-box">
-                <select id="themeSelect" onchange="showCodeTip()">
-                    <option value="1">革命老区延安GDP发展数据</option>
-                    <option value="2">全国党员数量发展数据</option>
-                    <option value="3">全国红色旅游游客量分析</option>
-                    <option value="4">脱贫攻坚成果数据（2015-2020）</option>
-                    <option value="5">中国高铁运营里程增长（2015-2025）</option>
-                    <option value="6">可再生能源装机容量发展（2020-2025）</option>
-                    <option value="7">全国粮食产量稳定增长（2015-2025）</option>
-                </select>
-            </div>
 
-            <div class="code-box">
-                <div class="code-tip" id="codeTip">请填写红色主题色代码：color = "#c93737"</div>
-                <textarea id="codeInput" placeholder="请在此填写指定代码，完成编程实践..."></textarea>
+        <!-- 页面1：代码填空界面（默认显示） -->
+        <div id="codePage" class="page">
+            <div class="header">
+                <h1 class="title">红色数据可视化分析实践</h1>
+                <p class="sub-title">践行求真务实学风 · 规范编写代码 · 传承红色基因 · 勇担青年使命</p>
             </div>
-
-            <div class="btn-box">
-                <button onclick="checkCodeAndGenerate()">提交代码 → 生成可视化成果</button>
-            </div>
-
-            <div id="resultArea">
-                <div id="chart"></div>
-                <div class="data-source">
-                    <span id="dataSource">数据来源：官方统计</span>
+            <div class="divider"></div>
+            <div class="wrap">
+                <!-- 1. 代码填空：红色主题色 -->
+                <div class="code-box">
+                    <div class="code-context">// 可视化图表全局配置
+const chartConfig = {
+  // 主题颜色配置
+  color = ________,  // 待填充
+  grid: { top: 50 },
+  legend: { top: 0 }
+}</div>
+                    <div class="code-tip">代码填空1：设置红色主题色 → color = '#c93737'</div>
+                    <textarea id="code1" placeholder="请填写缺失的代码内容"></textarea>
                 </div>
+
+                <!-- 2. 代码填空：开启折线绘制 -->
+                <div class="code-box">
+                    <div class="code-context">// 图表渲染核心函数
+function renderChart(){
+  // 控制是否绘制折线图
+  const drawLine = ________;  // 待填充
+  if(drawLine){ drawTrendLine(); }
+}</div>
+                    <div class="code-tip">代码填空2：开启折线绘制 → drawLine = true</div>
+                    <textarea id="code2" placeholder="请填写缺失的代码内容"></textarea>
+                </div>
+
+                <!-- 3. 代码填空：显示数据标签 -->
+                <div class="code-box">
+                    <div class="code-context">// 数据展示配置
+const labelConfig = {
+  // 是否显示数值标签
+  showDataLabel: ________,  // 待填充
+  fontSize: 12,
+  color: #fff
+}</div>
+                    <div class="code-tip">代码填空3：显示数据标签 → showDataLabel = true</div>
+                    <textarea id="code3" placeholder="请填写缺失的代码内容"></textarea>
+                </div>
+
+                <!-- 4. 代码填空：柱状图类型 -->
+                <div class="code-box">
+                    <div class="code-context">// 图表系列配置
+series: [{
+  // 图表展示类型
+  type: ________,  // 待填充
+  data: dataSource,
+  name: '统计数据'
+}]</div>
+                    <div class="code-tip">代码填空4：设置柱状图类型 → chartType = 'bar'</div>
+                    <textarea id="code4" placeholder="请填写缺失的代码内容"></textarea>
+                </div>
+
+                <!-- 提交按钮 -->
+                <div class="btn-box">
+                    <button onclick="checkAllCode()">提交全部代码 → 生成可视化数据分析</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面2：可视化图表界面（默认隐藏） -->
+        <div id="chartPage" class="page hide">
+            <div class="header">
+                <!-- 返回箭头图标 -->
+                <button class="back-btn" onclick="goBack()">←</button>
+                <h1 class="title">数据分析可视化结果</h1>
+                <p class="sub-title">延安GDP | 党员数量 | 脱贫攻坚</p>
+            </div>
+            <div class="divider"></div>
+            <div class="wrap">
+                <div id="chart1" class="chart-item"></div>
+                <div class="data-source"><span id="source1">数据来源：延安市统计局官方公报</span></div>
+
+                <div id="chart2" class="chart-item"></div>
+                <div class="data-source"><span id="source2">数据来源：中共中央组织部党内统计公报</span></div>
+
+                <div id="chart3" class="chart-item"></div>
+                <div class="data-source"><span id="source3">数据来源：国家统计局官方公报、国务院扶贫办</span></div>
+
                 <div class="experience" id="experienceBox"></div>
             </div>
         </div>
     </div>
 
     <script>
-        var myChart = echarts.init(document.getElementById('chart'));
-        const regexMap = {
-            1: /^color\s*=\s*["']#c93737["']$/,
-            2: /^drawLine\s*=\s*true$/,
-            3: /^redTheme\s*=\s*["']on["']$/,
-            4: /^showDataLabel\s*=\s*true$/,
-            5: /^chartType\s*=\s*["']bar["']$/,
-            6: /^energyType\s*=\s*["']renewable["']$/,
-            7: /^grainColor\s*=\s*["']#c93737["']$/
-        };
+        // 初始化3个图表实例
+        const chart1 = echarts.init(document.getElementById('chart1'));
+        const chart2 = echarts.init(document.getElementById('chart2'));
+        const chart3 = echarts.init(document.getElementById('chart3'));
 
-        function showCodeTip() {
-            let theme = document.getElementById("themeSelect").value;
-            let tipBox = document.getElementById("codeTip");
-            switch(theme){
-                case "1": tipBox.innerText = "必填代码：设置红色主题色 → color = '#c93737'"; break;
-                case "2": tipBox.innerText = "必填代码：开启折线绘制 → drawLine = true"; break;
-                case "3": tipBox.innerText = "必填代码：启用红色主题 → redTheme = 'on'"; break;
-                case "4": tipBox.innerText = "必填代码：显示数据标签 → showDataLabel = true"; break;
-                case "5": tipBox.innerText = "必填代码：设置柱状图类型 → chartType = 'bar'"; break;
-                case "6": tipBox.innerText = "必填代码：指定可再生能源 → energyType = 'renewable'"; break;
-                case "7": tipBox.innerText = "必填代码：设置粮食主题色 → grainColor = '#c93737'"; break;
-            }
-            document.getElementById("codeInput").value = "";
+        // 代码校验规则
+        const codeRules = [
+            /^color\s*=\s*["']#c93737["']$/,
+            /^drawLine\s*=\s*true$/,
+            /^showDataLabel\s*=\s*true$/,
+            /^chartType\s*=\s*["']bar["']$/
+        ];
+
+        // 返回填空页面
+        function goBack() {
+            document.getElementById('codePage').classList.remove('hide');
+            document.getElementById('chartPage').classList.remove('show');
+            setTimeout(() => {
+                document.getElementById('chartPage').classList.add('hide');
+            }, 600);
         }
 
-        function checkCodeAndGenerate() {
-            let theme = document.getElementById("themeSelect").value;
-            let inputCode = document.getElementById("codeInput").value.trim();
+        // 校验全部代码 + 跳转到图表页（修复图表渲染问题）
+        function checkAllCode() {
+            const codes = [
+                document.getElementById("code1").value.trim(),
+                document.getElementById("code2").value.trim(),
+                document.getElementById("code3").value.trim(),
+                document.getElementById("code4").value.trim()
+            ];
 
-            if (!regexMap[theme].test(inputCode)) {
-                alert("代码编写错误！请按照提示填写正确代码，践行精益求精的学风~");
-                return;
+            // 校验逻辑
+            for (let i = 0; i < 4; i++) {
+                if (!codeRules[i].test(codes[i])) {
+                    alert(`第${i+1}个代码填写错误！请按照提示填写正确代码~`);
+                    return;
+                }
             }
 
-            let resultArea = document.getElementById("resultArea");
-            resultArea.style.visibility = "visible";
+            // 切换到图表页
+            document.getElementById('codePage').classList.add('hide');
+            document.getElementById('chartPage').classList.remove('hide');
+            
+            // 先触发淡入动画，再渲染图表并强制重绘
             setTimeout(() => {
-                resultArea.style.opacity = "1";
-                resultArea.style.transform = "translateY(0)";
+                document.getElementById('chartPage').classList.add('show');
+                
+                // 渲染3个核心图表
+                renderYanAnGDP();
+                renderPartyMember();
+                renderPovertyAlleviation();
+
+                // 关键修复：等待动画结束后手动重绘图表，解决尺寸计算错误
+                setTimeout(() => {
+                    chart1.resize();
+                    chart2.resize();
+                    chart3.resize();
+                }, 600); // 等待淡入动画（0.6s）完成后重绘
             }, 10);
 
-            let title, experienceText, sourceText;
-
-            if (theme == 1) {
-                title = "延安革命老区GDP及年度增速（2015-2023）";
-                const xData = ["2015", "2017", "2019", "2021", "2023"];
-                const gdpData = [1205.1, 1318.05, 1696.27, 2043.70, 2280.24];
-                const rateData = [6.2, 7.8, 8.5, 9.1, 7.6];
-                experienceText = "通过本次红色数据可视化实践，我直观感受到了延安革命老区在党的领导下取得的巨大发展成就。在编写代码的过程中，我严格遵循求真务实、精益求精的优良学风，规范完成代码编写，用真实官方数据见证红色基因的传承。作为青年党员，我将把严谨务实的作风融入学习生活，以专业实践践行初心使命。";
-                sourceText = "数据来源：延安市统计局官方公报";
-
-                myChart.setOption({
-                    title: { text: title, left: 'center', textStyle: {color: '#c93737'} },
-                    tooltip: { trigger: 'axis' },
-                    legend: { data: ['GDP(亿元)','年度增速(%)'], top: 30 },
-                    xAxis: { type: 'category', data: xData },
-                    yAxis: [
-                        { type: 'value', name: 'GDP(亿元)' },
-                        { type: 'value', name: '增速(%)', position: 'right' }
-                    ],
-                    grid: { left: '3%', right: '8%', bottom: '3%', containLabel: true },
-                    series: [
-                        { name: 'GDP(亿元)', type: 'bar', data: gdpData, itemStyle: {color: '#c93737'} },
-                        { name: '年度增速(%)', type: 'line', yAxisIndex: 1, data: rateData, smooth: true, itemStyle: {color: '#e98080'}, lineStyle: {width:3} }
-                    ]
-                });
-            }
-
-            else if (theme == 2) {
-                title = "全国党员数量及城乡结构占比（2015-2023）";
-                const xData = ["2015", "2017", "2019", "2021", "2023"];
-                const numData = [8875.8, 9059.4, 9191.4, 9671.2, 9918.5];
-                experienceText = "本次党员发展数据可视化实践，让我清晰看到了党组织不断发展壮大的历程。通过亲手编写代码完成可视化，我深刻理解了理论联系实际的学风要求，以严谨态度完成实践任务。作为新时代青年党员，我将坚定理想信念，在学风建设中发挥先锋模范作用，不忘初心、牢记使命。";
-                sourceText = "数据来源：中共中央组织部党内统计公报";
-
-                myChart.setOption({
-                    title: { text: title, left: 'center', textStyle: {color: '#c93737'} },
-                    tooltip: { trigger: 'item' },
-                    legend: { top: 30, left: 'center' },
-                    grid: { left: '3%', right: '4%', bottom: '3%', width: '55%' },
-                    xAxis: { type: 'category', data: xData, gridIndex: 0 },
-                    yAxis: { type: 'value', name: '党员数量(万名)', gridIndex: 0 },
-                    series: [
-                        {
-                            name: '党员总数', type: 'line', smooth: true, data: numData,
-                            areaStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[
-                                {offset:0,color:'rgba(201,55,55,0.8)'},{offset:1,color:'rgba(201,55,55,0.1)'}
-                            ])},
-                            itemStyle: {color: '#c93737'}, lineStyle: {width:2}, gridIndex:0, xAxisIndex:0, yAxisIndex:0
-                        },
-                        {
-                            name: '城乡结构', type: 'pie', radius: ['30%','50%'], center: ['78%','55%'],
-                            data: [{name:'城镇党员',value:7240},{name:'农村党员',value:2678.5}],
-                            itemStyle: {color: function(params){return params.dataIndex===0?'#c93737':'#e98080';}}
-                        }
-                    ]
-                });
-            }
-
-            else if (theme == 3) {
-                title = "全国红色旅游游客量及同比增速（2015-2023）";
-                const xData = ["2015", "2017", "2019", "2021", "2023"];
-                const visitorData = [10.2, 12.4, 14.1, 19.3, 14.8];
-                const growData = [8.5, 10.2, 13.6, 22.7, 11.2];
-                experienceText = "通过红色旅游数据可视化分析，我感受到红色文化在新时代的强大生命力。亲手编写代码完成图表生成，让我践行了学以致用、学用相长的学风，拒绝形式化学习。数据背后是红色精神的传承，我将以此次实践为契机，涵养优良学风，传承红色基因，争做担当有为的新时代青年。";
-                sourceText = "数据来源：中国旅游研究院《中国红色旅游发展报告》";
-
-                myChart.setOption({
-                    title: { text: title, left: 'center', textStyle: {color: '#c93737'} },
-                    tooltip: { trigger: 'axis' },
-                    legend: { data: ['游客量(亿人次)','同比增速(%)'], top:30 },
-                    xAxis: { type: 'category', data: xData },
-                    yAxis: [
-                        { type: 'value', name: '游客量(亿人次)' },
-                        { type: 'value', name: '增速(%)', position: 'right' }
-                    ],
-                    grid: { left: '3%', right: '8%', bottom: '3%', containLabel: true },
-                    series: [
-                        { name: '游客量(亿人次)', type: 'bar', data: visitorData, itemStyle: {color: '#c93737'} },
-                        { name: '同比增速(%)', type: 'line', yAxisIndex:1, data: growData, smooth:true, itemStyle:{color:'#e98080'}, lineStyle:{width:3} }
-                    ]
-                });
-            }
-
-            else if (theme == 4) {
-                title = "农村贫困人口 & 年度脱贫人数（2015-2020）";
-                const xData = ["2015", "2017", "2019", "2020中期", "2020年末"];
-                const poorData = [5575, 3046, 551, 551, 0];
-                const liftData = [1442, 1289, 1109, 0, 551];
-                experienceText = "通过脱贫攻坚数据可视化，我震撼于中国8年减贫9899万人的奇迹。编写代码时我秉持严谨求实的学风，用国家统计局官方数据见证脱贫攻坚的伟大成就。作为青年，我深刻认识到党的领导是脱贫成功的根本保证，将以精益求精的态度投身学习，为乡村振兴贡献青春力量。";
-                sourceText = "数据来源：国家统计局官方公报、国务院扶贫办";
-
-                myChart.setOption({
-                    title: { text: title, left: 'center', textStyle: {color: '#c93737'} },
-                    tooltip: { trigger: 'axis' },
-                    legend: { data: ['剩余贫困人口(万人)','年度脱贫人数(万人)'], top:30 },
-                    xAxis: { type: 'category', data: xData },
-                    yAxis: { type: 'value', name: '人数(万人)' },
-                    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-                    series: [
-                        { name: '剩余贫困人口(万人)', type: 'bar', data: poorData, itemStyle: {color: '#c93737'}, label:{show:true,position:'top'} },
-                        { name: '年度脱贫人数(万人)', type: 'line', step:'middle', data: liftData, itemStyle:{color:'#e98080'}, lineStyle:{width:3} }
-                    ]
-                });
-            }
-
-            else if (theme == 5) {
-                title = "高铁运营里程 & 区域分布占比（2015-2025）";
-                const xData = ["2015", "2018", "2021", "2023", "2025"];
-                const mileData = [1.9, 2.9, 4.0, 4.5, 5.0];
-                experienceText = "中国高铁里程从1.9万公里跃升至5万公里，超越世界总和的成就令我自豪。通过代码实践，我将理论知识转化为可视化成果，践行了学用结合的优良学风。这一成就彰显了中国特色社会主义的制度优势，我将以创新精神钻研专业，为交通强国建设添砖加瓦。";
-                sourceText = "数据来源：中国国家铁路集团有限公司、国家铁路局";
-
-                myChart.setOption({
-                    title: { text: title, left: 'center', textStyle: {color: '#c93737'} },
-                    tooltip: { trigger: 'item' },
-                    legend: { top:30 },
-                    grid: { left: '8%', right: '55%', bottom: '3%', containLabel: true },
-                    xAxis: { type: 'value', name: '里程(万公里)', gridIndex:0 },
-                    yAxis: { type: 'category', data: xData, gridIndex:0 },
-                    series: [
-                        { name: '高铁里程', type: 'bar', data: mileData, itemStyle: {color: '#c93737'}, barWidth:'40%', gridIndex:0, xAxisIndex:0, yAxisIndex:0 },
-                        {
-                            name: '区域占比', type: 'pie', radius: ['30%','50%'], center: ['78%','55%'],
-                            data: [{name:'东部地区',value:2.7},{name:'中西部地区',value:2.3}],
-                            itemStyle: {color: function(params){return params.dataIndex===0?'#c93737':'#e98080';}}
-                        }
-                    ]
-                });
-            }
-
-            else if (theme == 6) {
-                title = "可再生能源装机容量及增长趋势（2020-2025）";
-                const xData = ["2020", "2021", "2023", "2024", "2025"];
-                const windData = [4.1, 4.7, 7.2, 8.5, 9.8];
-                const solarData = [5.2, 5.9, 10.3, 11.6, 13.6];
-                const totalData = [9.3, 10.6, 17.5, 20.1, 23.4];
-                experienceText = "可再生能源装机容量5年增长1.5倍的数据，展现了中国绿色发展的决心。编写代码时我严格遵循规范，用国家能源局权威数据呈现双碳战略成果。作为新时代青年，我将践行绿色发展理念，以专业能力助力生态文明建设，为美丽中国贡献力量。";
-                sourceText = "数据来源：国家能源局官方统计数据";
-
-                myChart.setOption({
-                    title: { text: title, left: 'center', textStyle: {color: '#c93737'} },
-                    tooltip: { trigger: 'axis', stackName: '总量' },
-                    legend: { data: ['风电','光伏','总装机增速'], top:30 },
-                    xAxis: { type: 'category', data: xData },
-                    yAxis: { type: 'value', name: '装机容量(亿千瓦)' },
-                    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-                    series: [
-                        { name: '风电', type: 'bar', stack: 'total', data: windData, itemStyle: {color: '#c93737'} },
-                        { name: '光伏', type: 'bar', stack: 'total', data: solarData, itemStyle: {color: '#e98080'} },
-                        {
-                            name: '总装机增速', type: 'line', data: totalData, smooth:true,
-                            areaStyle: { color: 'rgba(201,55,55,0.1)' }, lineStyle: {width:2}
-                        }
-                    ]
-                });
-            }
-
-            else if (theme == 7) {
-                title = "粮食总产量 & 年度增产量（2015-2025）";
-                const xData = ["2015", "2018", "2021", "2024", "2025"];
-                const grainData = [66043, 65789, 68285, 70650, 71488];
-                const addData = [0, -254, 2496, 2365, 838];
-                experienceText = "粮食产量连续多年稳定在1.4万亿斤以上，让我深刻体会到'中国人的饭碗牢牢端在自己手中'的底气。通过代码实践，我将严谨学风融入数据可视化，用国家统计局数据见证粮食安全成就。作为青年党员，我将节约粮食、珍惜成果，以实际行动践行大国粮仓的责任担当。";
-                sourceText = "数据来源：国家统计局年度粮食产量公告";
-
-                myChart.setOption({
-                    title: { text: title, left: 'center', textStyle: {color: '#c93737'} },
-                    tooltip: { trigger: 'axis' },
-                    legend: { data: ['总产量(万吨)','年度增量(万吨)'], top:30 },
-                    xAxis: { type: 'category', data: xData },
-                    yAxis: { type: 'value', name: '产量/增量(万吨)' },
-                    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
-                    series: [
-                        { name: '总产量(万吨)', type: 'line', step:'middle', data: grainData, itemStyle: {color: '#c93737'}, lineStyle: {width:3} },
-                        { name: '年度增量(万吨)', type: 'bar', data: addData, itemStyle: {color: '#e98080'} }
-                    ]
-                });
-            }
-
-            document.getElementById("experienceBox").innerText = experienceText;
-            document.getElementById("dataSource").innerText = sourceText;
+            // 综合心得体会
+            document.getElementById("experienceBox").innerText = "通过本次红色数据可视化实践，我从延安革命老区发展、党组织壮大、脱贫攻坚伟大胜利三组数据中，深刻感受到了党的领导下国家取得的历史性成就。在编写代码的过程中，我始终秉持求真务实、精益求精的优良学风，规范完成代码编写。作为新时代青年，我将传承红色基因，坚定理想信念，以严谨务实的作风投身学习与实践，为中华民族伟大复兴贡献青春力量！";
         }
+
+        // 延安GDP图表
+        function renderYanAnGDP() {
+            const xData = ["2015", "2017", "2019", "2021", "2023"];
+            const gdpData = [1205.1, 1318.05, 1696.27, 2043.70, 2280.24];
+            const rateData = [6.2, 7.8, 8.5, 9.1, 7.6];
+            chart1.setOption({
+                title: { text: "延安革命老区GDP及年度增速（2015-2023）", left: 'center', textStyle: {color: '#c93737'} },
+                tooltip: { trigger: 'axis' },
+                legend: { data: ['GDP(亿元)','年度增速(%)'], top: 30 },
+                xAxis: { type: 'category', data: xData },
+                yAxis: [{ type: 'value', name: 'GDP(亿元)' },{ type: 'value', name: '增速(%)', position: 'right' }],
+                series: [
+                    { name: 'GDP(亿元)', type: 'bar', data: gdpData, itemStyle: {color: '#c93737'} },
+                    { name: '年度增速(%)', type: 'line', data: rateData, smooth: true, itemStyle: {color: '#e98080'} }
+                ]
+            });
+        }
+
+        // 党员数量图表
+        function renderPartyMember() {
+            const xData = ["2015", "2017", "2019", "2021", "2023"];
+            const numData = [8875.8, 9059.4, 9191.4, 9671.2, 9918.5];
+            chart2.setOption({
+                title: { text: "全国党员数量及城乡结构占比（2015-2023）", left: 'center', textStyle: {color: '#c93737'} },
+                tooltip: { trigger: 'item' },
+                legend: { top: 30 },
+                xAxis: { type: 'category', data: xData },
+                yAxis: { type: 'value', name: '党员数量(万名)' },
+                series: [
+                    { name: '党员总数', type: 'line', smooth: true, data: numData, itemStyle: {color: '#c93737'} },
+                    { name: '城乡结构', type: 'pie', radius: ['30%','50%'], center: ['78%','55%'], data: [{name:'城镇党员',value:7240},{name:'农村党员',value:2678.5}], itemStyle: {color: params=>params.dataIndex===0?'#c93737':'#82c064'} }
+                ]
+            });
+        }
+
+        // 脱贫攻坚图表
+        function renderPovertyAlleviation() {
+            const xData = ["2015", "2017", "2019", "2020中期", "2020年末"];
+            const poorData = [5575, 3046, 551, 551, 0];
+            const liftData = [1442, 1289, 1109, 0, 551];
+            chart3.setOption({
+                title: { text: "农村贫困人口 & 年度脱贫人数（2015-2020）", left: 'center', textStyle: {color: '#c93737'} },
+                tooltip: { trigger: 'axis' },
+                legend: { data: ['剩余贫困人口(万人)','年度脱贫人数(万人)'], top:30 },
+                xAxis: { type: 'category', data: xData },
+                yAxis: { type: 'value', name: '人数(万人)' },
+                series: [
+                    { name: '剩余贫困人口(万人)', type: 'bar', data: poorData, itemStyle: {color: '#c93737'}, label:{show:true} },
+                    { name: '年度脱贫人数(万人)', type: 'line', step:'middle', data: liftData, itemStyle: {color: '#e98080'} }
+                ]
+            });
+        }
+
+        // 窗口大小变化时重绘图表
+        window.addEventListener('resize', () => {
+            chart1.resize();
+            chart2.resize();
+            chart3.resize();
+        });
     </script>
 </body>
 </html>
