@@ -1,0 +1,85 @@
+0 verbose cli E:\Program Files\nodejs\node.exe E:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v25.2.0
+3 silly config load:file:E:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:E:\红色可视化\.npmrc
+5 silly config load:file:C:\Users\taiyanbuding\.npmrc
+6 silly config load:file:E:\Program Files\nodejs\node_global\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:E:\红色可视化\.npm-cache\_logs\2026-05-26T12_52_43_179Z-
+10 verbose logfile E:\红色可视化\.npm-cache\_logs\2026-05-26T12_52_43_179Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest vue@^3.4.21
+15 silly packumentCache full:https://registry.npmmirror.com/vue cache-miss
+16 http fetch GET 200 https://registry.npmmirror.com/vue 223ms (cache miss)
+17 silly packumentCache full:https://registry.npmmirror.com/vue set size:373097 disposed:false
+18 silly fetch manifest typescript@*
+19 silly packumentCache full:https://registry.npmmirror.com/typescript cache-miss
+20 http fetch GET 200 https://registry.npmmirror.com/npm 264ms
+21 http fetch GET 200 https://registry.npmmirror.com/typescript 134ms (cache miss)
+22 silly packumentCache full:https://registry.npmmirror.com/typescript set size:1685991 disposed:false
+23 silly fetch manifest echarts@^5.4.3
+24 silly packumentCache full:https://registry.npmmirror.com/echarts cache-miss
+25 http fetch GET 200 https://registry.npmmirror.com/echarts 66ms (cache miss)
+26 silly packumentCache full:https://registry.npmmirror.com/echarts set size:63533 disposed:false
+27 silly fetch manifest @vitejs/plugin-vue@^5.0.4
+28 silly packumentCache full:https://registry.npmmirror.com/@vitejs%2fplugin-vue cache-miss
+29 http fetch GET 200 https://registry.npmmirror.com/@vitejs%2fplugin-vue 51ms (cache miss)
+30 silly packumentCache full:https://registry.npmmirror.com/@vitejs%2fplugin-vue set size:78917 disposed:false
+31 silly fetch manifest vite@^6.5.0
+32 silly packumentCache full:https://registry.npmmirror.com/vite cache-miss
+33 http fetch GET 200 https://registry.npmmirror.com/vite 904ms (cache miss)
+34 silly packumentCache full:https://registry.npmmirror.com/vite set size:6236979 disposed:false
+35 silly fetch manifest vite@^5.0.0 || ^6.0.0
+36 silly packumentCache full:https://registry.npmmirror.com/vite cache-miss
+37 http cache https://registry.npmmirror.com/vite 56ms (cache hit)
+38 silly packumentCache full:https://registry.npmmirror.com/vite set size:38666480 disposed:false
+39 verbose stack Error: unable to resolve dependency tree
+39 verbose stack     at #failPeerConflict (E:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1420:25)
+39 verbose stack     at #loadPeerSet (E:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1386:33)
+39 verbose stack     at async #buildDepStep (E:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:929:11)
+39 verbose stack     at async Arborist.buildIdealTree (E:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:182:7)
+39 verbose stack     at async Promise.all (index 1)
+39 verbose stack     at async Arborist.reify (E:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:114:5)
+39 verbose stack     at async Install.exec (E:\Program Files\nodejs\node_modules\npm\lib\commands\install.js:150:5)
+39 verbose stack     at async Npm.exec (E:\Program Files\nodejs\node_modules\npm\lib\npm.js:208:9)
+39 verbose stack     at async module.exports (E:\Program Files\nodejs\node_modules\npm\lib\cli\entry.js:67:5)
+40 error code ERESOLVE
+41 error ERESOLVE unable to resolve dependency tree
+42 error
+43 error While resolving: red-visualization@1.0.0
+43 error Found: vite@undefined[2m[22m
+43 error [2mnode_modules/vite[22m
+43 error   [34mdev[39m vite@"^6.5.0" from the root project
+43 error
+43 error Could not resolve dependency:
+43 error [95mpeer[39m vite@"^5.0.0 || ^6.0.0" from @vitejs/plugin-vue@5.2.4[2m[22m
+43 error [2mnode_modules/@vitejs/plugin-vue[22m
+43 error   [34mdev[39m @vitejs/plugin-vue@"^5.0.4" from the root project
+43 error
+43 error Fix the upstream dependency conflict, or retry
+43 error this command with --force or --legacy-peer-deps
+43 error to accept an incorrect (and potentially broken) dependency resolution.
+44 error
+44 error
+44 error For a full report see:
+44 error E:\红色可视化\.npm-cache\_logs\2026-05-26T12_52_43_179Z-eresolve-report.txt
+45 silly unfinished npm timer reify 1779799963430
+46 silly unfinished npm timer reify:loadTrees 1779799963430
+47 silly unfinished npm timer idealTree:buildDeps 1779799963437
+48 silly unfinished npm timer idealTree:#root 1779799963437
+49 verbose cwd E:\红色可视化
+50 verbose os Windows_NT 10.0.26200
+51 verbose node v25.2.0
+52 verbose npm  v11.6.2
+53 notice
+53 notice New [33mminor[39m version of npm available! [33m11.6.2[39m -> [34m11.15.0[39m
+53 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v11.15.0[39m
+53 notice To update run: [4mnpm install -g npm@11.15.0[24m
+53 notice  { force: true, Symbol(proc-log.meta): true }
+54 verbose exit 1
+55 verbose code 1
+56 error A complete log of this run can be found in: E:\红色可视化\.npm-cache\_logs\2026-05-26T12_52_43_179Z-debug-0.log
