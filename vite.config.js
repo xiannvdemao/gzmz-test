@@ -8,5 +8,5 @@ export default defineConfig({
       '@': '/src'
     }
   },
-  base: '/red-visualization/'
+  base: '/gzmz-test/'
 })
